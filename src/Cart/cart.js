@@ -56,8 +56,7 @@ export default function QuantityEdit() {
 
   
     if( data || data !== null || data.length !== 0 ){
-      const stri = JSON.stringify(data);
-        window.localStorage.setItem("cart",stri);
+      
                 axios.post(`https://demo-04s3.onrender.com/create-checkout-session`,{data})
             .then((res)=>{
                 if(res.data.url){
