@@ -16,7 +16,9 @@ import { isLogin } from '../../../Redux/Actions/actions';
 import { InputGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import data from '../../../constant/data'
-
+import { Typeahead } from 'react-bootstrap-typeahead';
+import 'react-bootstrap-typeahead/css/Typeahead.css';
+import  Search  from './Search';
 
 
 const Nav = ({show=true}) => {
@@ -85,14 +87,16 @@ const list  = ()=> products.filter((p)=>{
     }
   }).map((p)=>{
     return(
-        <>
-        <Link style={{textDecoration:'none'}} to={`/item/${p.id}`}>
-      <div className='san'>
-        <p>{p.title}</p>
-      </div>
+        <div style={{marginLeft:"3%",fontWeight:'50',color:'black'}}>
+        <Link  style={{textDecoration:'none',color:'black'}} to={`/item/${p.id}`}>
+             
+                {p.title}
+              
       </Link>
       <br/>
-      </>
+      </div>
+      
+      
       
     )
   })
@@ -130,7 +134,20 @@ const list  = ()=> products.filter((p)=>{
           <div className="collapse navbar-collapse">
             <form className="form-inline my-2 my-lg-0 mx-auto">
               <input onChange={(e)=>setSearch(e.target.value)} className="form-control" type="search" placeholder="Search for products..." aria-label="Search" />
+              <div className='d' style={{position:'absolute',width:'40%' ,top:'100%',boxShadow:'0px 8px 16px 0px',backgroundColor:'#f9f9f9',borderRadius:'3px', zIndex:100}}> {list()}</div>
             </form>
+
+
+
+
+    {/* <Search className="form-inline my-2 my-lg-0 mx-auto"  data={products}/> */}
+
+
+
+
+
+
+
 
             <ul className="navbar-nav">
               <li className="nav-item">
@@ -179,8 +196,8 @@ const list  = ()=> products.filter((p)=>{
         </div>
       </nav>
 
-      <div style={{position:'relative'}}>
-              {list()}
+      <div style={{zIndex:'3'}}>
+             
       </div>  
   {help()}
       

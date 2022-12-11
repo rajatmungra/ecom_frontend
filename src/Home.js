@@ -14,7 +14,7 @@ const Home = ({alert="kk"}) => {
   }
  
   return (
-    <div>
+    <div >
         <Nav/>
         <Products/>  
     </div>
