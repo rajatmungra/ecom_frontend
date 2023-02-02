@@ -57,7 +57,7 @@ export default function QuantityEdit() {
   
     if( data || data !== null || data.length !== 0 ){
       
-                axios.post(`https://github.com/rajatmungra/ecom_frontend.git/create-checkout-session`,{data})
+                axios.post(`https://ecommerce-rajat.vercel.app/create-checkout-session`,{data})
             .then((res)=>{
                 if(res.data.url){
                     window.location.href = res.data.url
