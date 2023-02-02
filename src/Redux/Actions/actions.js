@@ -10,7 +10,7 @@ export const badgeValue = (value)=>{
 }
 
 export const product_action = () => async dispatch => {
-    const response = await axios.get('https://github.com/rajatmungra/ecom_frontend.git/products')
+    const response = await axios.get('https://ecommerce-rajat.vercel.app/products')
     dispatch({
         type:'PRODUCTS',
         payload: response.data
@@ -20,10 +20,10 @@ export const product_action = () => async dispatch => {
 export const product_order = (order) => async dispatch => {
     let response;
     if(order === 'default'){
-         response = await axios.get(`https://github.com/rajatmungra/ecom_frontend.git/products`)
+         response = await axios.get(`https://ecommerce-rajat.vercel.app/products`)
     }
     else{
-         response = await axios.get(`https://github.com/rajatmungra/ecom_frontend.git/products/${order}`)
+         response = await axios.get(`https://ecommerce-rajat.vercel.app/products/${order}`)
     }
     
     dispatch({
@@ -43,7 +43,7 @@ export const categorywise = (value)=>{
 export const login_action = (data) => async dispatch => {
     let response;
     
-        response = await axios.post('https://github.com/rajatmungra/ecom_frontend.git/user/storeData',data)
+        response = await axios.post('https://ecommerce-rajat.vercel.app/user/storeData',data)
         
     
     dispatch({
