@@ -10,7 +10,7 @@ export const badgeValue = (value)=>{
 }
 
 export const product_action = () => async dispatch => {
-    const response = await axios.get('https://demo-04s3.onrender.com/products')
+    const response = await axios.get('https://github.com/rajatmungra/ecom_frontend.git/products')
     dispatch({
         type:'PRODUCTS',
         payload: response.data
@@ -20,10 +20,10 @@ export const product_action = () => async dispatch => {
 export const product_order = (order) => async dispatch => {
     let response;
     if(order === 'default'){
-         response = await axios.get(`https://demo-04s3.onrender.com/products`)
+         response = await axios.get(`https://github.com/rajatmungra/ecom_frontend.git/products`)
     }
     else{
-         response = await axios.get(`https://demo-04s3.onrender.com/products/${order}`)
+         response = await axios.get(`https://github.com/rajatmungra/ecom_frontend.git/products/${order}`)
     }
     
     dispatch({
@@ -43,7 +43,7 @@ export const categorywise = (value)=>{
 export const login_action = (data) => async dispatch => {
     let response;
     
-        response = await axios.post('https://demo-04s3.onrender.com/user/storeData',data)
+        response = await axios.post('https://github.com/rajatmungra/ecom_frontend.git/user/storeData',data)
         
     
     dispatch({
