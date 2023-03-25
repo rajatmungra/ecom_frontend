@@ -19,6 +19,8 @@ import data from '../../../constant/data'
 import { Typeahead } from 'react-bootstrap-typeahead';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 import  Search  from './Search';
+import { Divider, Typography } from "@material-ui/core";
+
 
 
 const Nav = ({show=true}) => {
