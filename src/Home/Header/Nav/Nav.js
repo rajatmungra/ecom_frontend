@@ -78,28 +78,28 @@ const help=()=> {
 }
 
 
-const list  = ()=> products.filter((p)=>{
-    if(search ===''){
-      return false;
-    }
-    else if (p.title.toLowerCase().includes(search.toLowerCase())){
-      return true;
-    }
-  }).map((p)=>{
-    return(
-        <div style={{marginLeft:"3%",fontWeight:'50',color:'black'}}>
-        <Link  style={{textDecoration:'none',color:'black'}} to={`/item/${p.id}`}>
-             
-                {p.title}
-              
-      </Link>
-      <br/>
-      </div>
-      
-      
-      
-    )
-  })
+const list  = ()=> products
+      .filter((p) => {
+        if (search === "") {
+          return false;
+        } else if (p.title.toLowerCase().includes(search.toLowerCase())) {
+          return true;
+        }
+      })
+      .map((p) => {
+        return (
+          <div style={{ marginLeft: "3%", fontWeight: "50", color: "black" }}>
+            <Link
+              style={{ textDecoration: "none", color: "black" }}
+              to={`/item/${p.id}`}
+            >
+              <Typography>{p.title}</Typography>
+              <Divider variant="middle" style={{margin:' 0 0 0 0', width:'100%', padding:'0 0'}}/>
+            </Link>
+            <br />
+          </div>
+        );
+      });
 
 
 
@@ -134,7 +134,20 @@ const list  = ()=> products.filter((p)=>{
           <div className="collapse navbar-collapse">
             <form className="form-inline my-2 my-lg-0 mx-auto">
               <input onChange={(e)=>setSearch(e.target.value)} className="form-control" type="search" placeholder="Search for products..." aria-label="Search" />
-              <div className='d' style={{position:'absolute',width:'40%' ,top:'100%',boxShadow:'0px 8px 16px 0px',backgroundColor:'#f9f9f9',borderRadius:'3px', zIndex:100}}> {list()}</div>
+              {search && <div
+                className="d"
+                
+                style={{
+                  position: "absolute",
+                  width: "40%",
+                  top: "100%",
+                  height:'30vh',
+                  backgroundColor: "#f9f9f9",
+                  borderRadius: "3px",
+                  zIndex: 100,
+                  overflow:"overlay"
+                }}
+              > {list()}</div> }
             </form>
 
 
