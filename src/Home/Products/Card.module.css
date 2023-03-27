@@ -10,6 +10,7 @@
 .shopCard {
     /* position: absolute; */
     width: max(100%, 350px);
+    max-width: 25rem;
     /* aspect-ratio is 350/467.75 */
     aspect-ratio: 0.74826296098;
     /* background: #f5f5f5; */
